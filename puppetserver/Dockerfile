@@ -19,8 +19,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN gem install kubeclient --no-ri --no-rdoc
-
 RUN puppet config set storeconfigs_backend puppetdb --section main && \
     puppet config set storeconfigs true --section main && \
     puppet config set reports puppetdb --section main
